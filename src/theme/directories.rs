@@ -61,7 +61,7 @@ impl Directory<'_> {
 
     pub fn match_context(&self, context: Option<&str>) -> bool {
         // If either the directory's or lookup's context is not specified, ignore context matching
-        if self.context.is_none() {
+        if context.is_none() || self.context.is_none() {
             return true;
         }
         // If both contexts are specified, ensure they match
